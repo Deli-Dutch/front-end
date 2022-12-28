@@ -28,6 +28,8 @@ const WriteSoloBoard = ({ navigation }) => {
           </View>
           <Input placeholder='정원' keyboardType='number-pad'/>
           <Input placeholder='한 줄 어필' />
+          <Input placeholder='오픈 채팅방 링크' />
+      
       </View>
       <TouchableOpacity style={styles.uploadButton} onPress={()=>navigation.navigate('TogetherSearch')}><Text style={styles.uploadText}>업로드 하기</Text></TouchableOpacity>
     </WriteBoardWrapper>

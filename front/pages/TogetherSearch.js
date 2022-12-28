@@ -17,7 +17,7 @@ import {
 
 import Modal from '../components/Modal';
 
-const TogetherSearch = () => {
+const TogetherSearch = ({navigation}) => {
   const [search, setSearch] = useState('');
   const [filteredDataSource, setFilteredDataSource] = useState([]);
   const [masterDataSource, setMasterDataSource] = useState([]);
@@ -102,6 +102,7 @@ const TogetherSearch = () => {
         backgroundColor: '#ffffff',
         height: '100%',
       }}>
+      <View>
       <Text
         style={{
           textAlign: 'center',
@@ -112,6 +113,10 @@ const TogetherSearch = () => {
         }}>
         국민대 기숙사
       </Text>
+      <TouchableOpacity style={{ position: 'absolute', right: 20, top: 20, }} onPress={() => navigation.navigate('WriteTogetherBoard')}>
+          <Image style={{ width: 25, height: 25 }} source={require('../assets/pencil.png')} />
+      </TouchableOpacity>
+      </View>
       <View style={{paddingHorizontal: 20}}>
         <View style={styles.textInputStyle}>
           <TextInput
