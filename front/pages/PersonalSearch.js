@@ -15,13 +15,14 @@ import {
   ImageBackground,
   Alert,
 } from 'react-native';
+const PersonalSearch = ({navigation}) => {
 
-const PersonalSearch = () => {
   const [search, setSearch] = useState('');
   const [filteredDataSource, setFilteredDataSource] = useState([]);
   const [masterDataSource, setMasterDataSource] = useState([]);
 
   useEffect(() => {
+  
     getMemberInfo();
   }, []);
 
@@ -57,7 +58,7 @@ const PersonalSearch = () => {
       <TouchableOpacity
         key={key}
         style={styles.flatListItem}
-        onPress={()=>AlertDialog(item)}>
+        onPress={() => navigation.navigate('MenuList')}>
         <View
           style={{
             flex: 2,
@@ -179,7 +180,7 @@ const PersonalSearch = () => {
         </View>
       </ScrollView>
     </SafeAreaView>
-  );
+  ); 
 };
 
 export default PersonalSearch;
