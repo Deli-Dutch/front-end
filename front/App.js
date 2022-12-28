@@ -1,11 +1,8 @@
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
-
+// import { View,Text,TouchableOpacity } from 'react-native';
+import NameSearch from './pages/NameSearch';
 const App = () => {
-  return (
-    <View>
-      <Text>테스트 페이지입니다.</Text>
-    </View>);
+  return (<NameSearch/>);
 };
 
 export default App;
