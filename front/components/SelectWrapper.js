@@ -21,6 +21,7 @@ const styles = StyleSheet.create({
   },
   contentBox: {
     flex: 4,
+    flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
   },
