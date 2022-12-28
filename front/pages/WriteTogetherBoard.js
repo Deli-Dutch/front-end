@@ -26,10 +26,10 @@ const WriteSoloBoard = ({ navigation }) => {
           </TouchableOpacity>
           <TimePickerModal open={timePicker} onConfirm={onConfirm} onCancel={hide} />
           </View>
-          <Input placeholder='정원' />
+          <Input placeholder='정원' keyboardType='number-pad'/>
           <Input placeholder='한 줄 어필' />
       </View>
-      <TouchableOpacity style={styles.uploadButton}><Text style={styles.uploadText}>업로드하기</Text></TouchableOpacity>
+      <TouchableOpacity style={styles.uploadButton}><Text style={styles.uploadText}>업로드 하기</Text></TouchableOpacity>
     </WriteBoardWrapper>
 }
 
