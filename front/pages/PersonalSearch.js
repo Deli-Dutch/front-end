@@ -98,16 +98,20 @@ const PersonalSearch = ({navigation}) => {
         backgroundColor: '#ffffff',
         height: '100%',
       }}>
+      <View>
       <Text
         style={{
           textAlign: 'center',
           fontWeight: '700',
           fontSize: 20,
-          marginBottom: 20,
-          marginTop: 20,
+          marginVertical: 20,
         }}>
         국민대 기숙사
-      </Text>
+        </Text>
+        <TouchableOpacity style={{ position: 'absolute', right: 20, top: 20, }} onPress={() => navigation.navigate('WriteSoloBoard')}>
+          <Image style={{ width: 25, height: 25 }} source={require('../assets/pencil.png')} />
+        </TouchableOpacity>
+      </View>
       <View style={{paddingHorizontal: 20}}>
         <View style={styles.textInputStyle}>
           <TextInput
