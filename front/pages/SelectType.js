@@ -5,9 +5,9 @@ import ImageButton from '../components/ImageButton';
 
 const SelectType = ({ navigation }) => {
   return (<SelectWrapper title='주문 유형을 선택해주세요'>
-    <ImageButton imgSrc={require('../assets/together.png')} onPress={()=>alert('다같이 목록 페이지로!')}>다같이</ImageButton>
+    <ImageButton imgSrc={require('../assets/together.png')} onPress={()=>navigation.navigate('TogetherSearch')}>다같이</ImageButton>
     <View style={styles.divider}></View> 
-    <ImageButton imgSrc={require('../assets/solo.png')} onPress={()=>alert('각자 목록 페이지로!')}>혼자</ImageButton>
+    <ImageButton imgSrc={require('../assets/solo.png')} onPress={()=>navigation.navigate('PersonalSearch')}>혼자</ImageButton>
   </SelectWrapper>);
 }
 

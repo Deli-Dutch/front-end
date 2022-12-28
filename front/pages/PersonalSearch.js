@@ -1,7 +1,7 @@
 import exdata from '../exdata';
 import React, {useState, useEffect} from 'react';
-import {Button, Modal} from 'react-native';
 import styles from '../styles';
+import AlertDialog from './AlertDialog';
 import {
   ScrollView,
   SafeAreaView,
@@ -13,9 +13,10 @@ import {
   TextInput,
   TouchableOpacity,
   ImageBackground,
+  Alert,
 } from 'react-native';
 
-const NameSearch = () => {
+const PersonalSearch = () => {
   const [search, setSearch] = useState('');
   const [filteredDataSource, setFilteredDataSource] = useState([]);
   const [masterDataSource, setMasterDataSource] = useState([]);
@@ -53,7 +54,10 @@ const NameSearch = () => {
   const ItemView = (item, key) => {
     //const imgUrl = `https://www.assembly.go.kr/static/portal/img/openassm/${item.MONA_CD}.jpg`;
     return (
-      <TouchableOpacity key={key} style={styles.flatListItem}>
+      <TouchableOpacity
+        key={key}
+        style={styles.flatListItem}
+        onPress={()=>AlertDialog(item)}>
         <View
           style={{
             flex: 2,
@@ -178,4 +182,4 @@ const NameSearch = () => {
   );
 };
 
-export default NameSearch;
+export default PersonalSearch;
