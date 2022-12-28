@@ -10,6 +10,8 @@ import WriteTogetherBoard from './pages/WriteTogetherBoard';
 // import { View,Text,TouchableOpacity } from 'react-native';
 import PersonalSearch from './pages/PersonalSearch';
 import TogetherSearch from './pages/TogetherSearch';
+import OpenLink from './pages/OpenLink';
+import MenuList from './pages/MenuList';
 
 const Stack = createNativeStackNavigator();
 
@@ -23,6 +25,8 @@ function App() {
         <Stack.Screen options={{headerShown: false}} name="WriteTogetherBoard" component={WriteTogetherBoard} />
         <Stack.Screen options={{headerShown: false}} name="PersonalSearch" component={PersonalSearch} />
         <Stack.Screen options={{headerShown: false}} name="TogetherSearch" component={TogetherSearch} />
+        <Stack.Screen options={{headerShown: false}} name="OpenLink" component={OpenLink} />
+        <Stack.Screen options={{headerShown: false}} name="MenuList" component={MenuList} />
       </Stack.Navigator>
     </NavigationContainer>
   );
