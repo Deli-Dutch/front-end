@@ -127,27 +127,27 @@ const TogetherSearch = ({navigation}) => {
           />
         </View>
       </View>
-      <View style={{width: '100%', flexDirection: 'row', height: 20}}>
+      <View style={{width: '100%', flexDirection: 'row', height: 20, marginVertical: 10}}>
         <TouchableOpacity
           style={{
             flex: 1,
             height: 25,
-            backgroundColor: '#70A0B0',
-            marginTop: 8,
+            backgroundColor: '#005BAA',
+            borderRadius: 10,
             marginLeft: 20,
             marginRight: 10,
           }}
           onPress={() => alert('hi')}>
-          <Text style={{textAlign: 'center'}}>치킨</Text>
+          <Text style={{textAlign: 'center', color: '#fff'}}>치킨</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={{
             flex: 1,
             height: 25,
-            backgroundColor: '#70A0B0',
-            marginTop: 8,
-            marginLeft: 10,
-            marginRight: 10,
+            borderColor: '#005BAA',
+            borderRadius: 10,
+            borderWidth: 1,
+            marginHorizontal: 5,
           }}
           onPress={() => alert('hi')}>
           <Text style={{textAlign: 'center'}}>피자</Text>
@@ -156,10 +156,11 @@ const TogetherSearch = ({navigation}) => {
           style={{
             flex: 1,
             height: 25,
-            backgroundColor: '#70A0B0',
-            marginTop: 8,
-            marginLeft: 10,
-            marginRight: 10,
+            borderColor: '#005BAA',
+            borderRadius: 10,
+            borderWidth: 1,
+            marginHorizontal: 5,
+
           }}
           onPress={() => alert('hi')}>
           <Text style={{textAlign: 'center'}}>떡볶이</Text>
@@ -168,9 +169,10 @@ const TogetherSearch = ({navigation}) => {
           style={{
             flex: 1,
             height: 25,
-            backgroundColor: '#70A0B0',
-            marginTop: 8,
-            marginLeft: 10,
+            borderColor: '#005BAA',
+            borderRadius: 10,
+            borderWidth: 1,
+            marginHorizontal: 5,  
             marginRight: 20,
           }}
           onPress={() => alert('hi')}>
