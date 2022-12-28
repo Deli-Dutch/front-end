@@ -60,38 +60,32 @@ const PersonalSearch = () => {
         onPress={()=>AlertDialog(item)}>
         <View
           style={{
-            flex: 2,
-            backgroundColor: '#AAAAAA',
-          }}></View>
-        <View
-          style={{
             flex: 5,
-            flexDirection: 'column',
-            backgroundColor: '#BBFF',
+            padding: 20,
+            borderBottomWidth: 1,
+            borderBottomColor: '#aaaaaa' //#005BAA
           }}>
-          <View style={{flex: 2}}>
+          <View style={{flex: 1.5}}>
             <Text
-              style={{textAlign: 'center', fontSize: 20, fontWeight: 'bold'}}>
+              style={styles.title}>
               {item.content}
             </Text>
           </View>
           <View
-            style={{flex: 2, justifyContent: 'center', flexDirection: 'row'}}>
+            style={{flex: 1, flexDirection: 'row'}}>
             <Text>음식점:</Text>
             <Text>{item.restaurant_id}</Text>
           </View>
-          <View style={{flex: 3, flexDirection: 'row'}}>
-            <View
-              style={{flex: 1, flexDirection: 'column', alignItems: 'center'}}>
-              <Text style={{marginBottom: 10}}>픽업 장소</Text>
-              <Text>{item.pick_up}</Text>
+          <View
+              style={{ flex: 1, flexDirection: 'row'}}>
+              <Text style={styles.info}>픽업 장소:&nbsp;&nbsp;&nbsp;</Text>
+              <Text style={{color: 'black'}}>{item.pick_up}</Text>
             </View>
             <View
-              style={{flex: 1, flexDirection: 'column', alignItems: 'center'}}>
-              <Text style={{marginBottom: 10}}>주문 예정 시간</Text>
-              <Text>{item.end_time}</Text>
+              style={{ flex: 1, flexDirection: 'row'}}>
+              <Text style={styles.info}>주문 시간:&nbsp;&nbsp;&nbsp;</Text>
+              <Text style={{color: 'black'}}>{item.end_time}</Text>
             </View>
-          </View>
         </View>
       </TouchableOpacity>
     );
