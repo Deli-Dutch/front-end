@@ -2,7 +2,7 @@ import menudata from '../menudata';
 import exdata from '../exdata';
 import React, {useState, useEffect} from 'react';
 import styles from '../styles';
-import AlertDialog from './AlertDialog';
+import Modal from '../components/Modal';
 import {
   ScrollView,
   SafeAreaView,
@@ -15,8 +15,11 @@ import {
   TouchableOpacity,
   ImageBackground,
   Alert,
+  Linking,
 } from 'react-native';
-const MenuList = ({navigation}) => {
+const MenuList = ({ navigation }) => {
+  const [modal, setModal] = useState(false);
+  const [sayYes, setSayYes] = useState(false);
   const [filteredDataSource, setFilteredDataSource] = useState([]);
 
   useEffect(() => {
@@ -33,7 +36,7 @@ const MenuList = ({navigation}) => {
   const ItemView = (item, key) => {
     //const imgUrl = `https://www.assembly.go.kr/static/portal/img/openassm/${item.MONA_CD}.jpg`;
     return (
-      <TouchableOpacity key={key}>
+      <TouchableOpacity key={key} onPress={() => setModal(true)}>
         <View
           style={[
             styles.flatListProfile,
@@ -54,7 +57,14 @@ const MenuList = ({navigation}) => {
             </View>
           </View>
         </View>
-      </TouchableOpacity>
+        <Modal title={sayYes?'':'장바구니에 담기'} modalVisible={modal} setModalVisible={setModal}
+          onComplete={() => { sayYes ? setModal(!modal): setSayYes(true); }}>
+          {!sayYes && <Text>{item.name}가(이){'\n'}메뉴에 추가됩니다.</Text>}
+          {sayYes && <><Text>아래의 채팅방에 참여하세요.</Text>
+            <Text style={{ color: 'darkblue' }} onPress={() => { Linking.openURL('http://google.com'); setModal(!modal); }}>
+            http://google.com</Text></>}
+        </Modal>
+        </TouchableOpacity>
     );
   };
 
@@ -64,6 +74,7 @@ const MenuList = ({navigation}) => {
         backgroundColor: '#ffffff',
         height: '100%',
       }}>
+
       <ScrollView style={{margin: 20}}>
         <View style={styles.assemblyListBar}>
           {filteredDataSource.map((e, i) => ItemView(e, i))}
