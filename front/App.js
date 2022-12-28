@@ -1,11 +1,20 @@
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import SelectDorm from './pages/SelectDorm';
+import SelectType from './pages/SelectType';
 
-const App = () => {
+const Stack = createNativeStackNavigator();
+
+function App() {
   return (
-    <View>
-      <Text>테스트 페이지입니다.</Text>
-    </View>);
-};
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="SelectDorm">
+        <Stack.Screen options={{headerShown: false}} name="SelectDorm" component={SelectDorm} />
+        <Stack.Screen options={{headerShown: false}} name="SelectType" component={SelectType} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
 
 export default App;
