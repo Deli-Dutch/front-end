@@ -44,7 +44,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   flatListTextProfile_Left: {
-    backgroundColor: '#333333',
     flexDirection: 'column',
     alignItems: 'flex-start',
     marginLeft: 10,
@@ -81,7 +80,7 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   textName: {
-    fontSize: 17,
+    fontSize: 20,
     fontWeight: 'bold',
     lineHeight: 20,
   },

@@ -33,40 +33,24 @@ const MenuList = ({navigation}) => {
   const ItemView = (item, key) => {
     //const imgUrl = `https://www.assembly.go.kr/static/portal/img/openassm/${item.MONA_CD}.jpg`;
     return (
-      <TouchableOpacity
-        key={key}>
+      <TouchableOpacity key={key}>
         <View
-          style={{
-            flex: 2,
-            backgroundColor: '#AAAAAA',
-          }}></View>
-        <View
-          style={{
-            flex: 5,
-            flexDirection: 'column',
-            backgroundColor: '#BBFF',
-          }}>
-          <View style={{flex: 2}}>
-            <Text
-              style={{textAlign: 'center', fontSize: 20, fontWeight: 'bold'}}>
-              {item.name}
-            </Text>
-          </View>
-          <View
-            style={{flex: 2, justifyContent: 'center', flexDirection: 'row'}}>
-            <Text>음식점:</Text>
-            <Text>{item.restaurant_id}</Text>
-          </View>
-          <View style={{flex: 3, flexDirection: 'row'}}>
-            <View
-              style={{flex: 1, flexDirection: 'column', alignItems: 'center'}}>
-              <Text style={{marginBottom: 10}}>픽업 장소</Text>
-              <Text>{item.name}</Text>
-            </View>
-            <View
-              style={{flex: 1, flexDirection: 'column', alignItems: 'center'}}>
-              <Text style={{marginBottom: 10}}>주문 예정 시간</Text>
-              <Text>{item.name}</Text>
+          style={[
+            styles.flatListProfile,
+            {borderColor: '#C8C8C8', borderTopWidth: 0.5},
+          ]}>
+          <View style={{flexDirection: 'row'}}>
+            <Image
+              source={require('../assets/kyochon_honeycombo.png')}
+              style={styles.profile}
+            />
+            <View style={{flexDirection: 'row', margin: 4}}>
+              <View style={styles.flatListTextProfile_Left}>
+                <Text style={styles.textName}>{item.name}</Text>
+                <View style={styles.row}>
+                  <Text style={{fontSize: 20}}>{item.price}</Text>
+                </View>
+              </View>
             </View>
           </View>
         </View>
