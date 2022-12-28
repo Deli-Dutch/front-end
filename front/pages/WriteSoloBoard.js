@@ -22,12 +22,13 @@ const WriteSoloBoard = ({ navigation }) => {
           <Input placeholder='제목' />
           <Input placeholder='지점명' />
           <Input placeholder='픽업 장소' />
-      <View>
-        <TouchableOpacity style={styles.itemContainer} onPress={show}>
-        <Text style={styles.itemText}>{pickedTime||'주문 예정 시간'}</Text>
-      </TouchableOpacity>
-      <TimePickerModal open={timePicker} onConfirm={onConfirm} onCancel={hide} />
-    </View>
+          <View>
+            <TouchableOpacity style={styles.itemContainer} onPress={show}>
+            <Text style={styles.itemText}>{pickedTime||'주문 예정 시간'}</Text>
+          </TouchableOpacity>
+          <TimePickerModal open={timePicker} onConfirm={onConfirm} onCancel={hide} />
+      </View>
+        <Input placeholder='오픈 채팅방 링크' />
       </View>
       <TouchableOpacity style={styles.uploadButton}><Text style={styles.uploadText}>업로드 하기</Text></TouchableOpacity>
     </WriteBoardWrapper>
