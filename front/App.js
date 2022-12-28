@@ -6,6 +6,11 @@ import SelectType from './pages/SelectType';
 import WriteSoloBoard from './pages/WriteSoloBoard';
 import WriteTogetherBoard from './pages/WriteTogetherBoard';
 
+
+// import { View,Text,TouchableOpacity } from 'react-native';
+import PersonalSearch from './pages/PersonalSearch';
+import TogetherSearch from './pages/TogetherSearch';
+
 const Stack = createNativeStackNavigator();
 
 function App() {
@@ -16,6 +21,8 @@ function App() {
         <Stack.Screen options={{headerShown: false}} name="SelectType" component={SelectType} />
         <Stack.Screen options={{headerShown: false}} name="WriteSoloBoard" component={WriteSoloBoard} />
         <Stack.Screen options={{headerShown: false}} name="WriteTogetherBoard" component={WriteTogetherBoard} />
+        <Stack.Screen options={{headerShown: false}} name="PersonalSearch" component={PersonalSearch} />
+        <Stack.Screen options={{headerShown: false}} name="TogetherSearch" component={TogetherSearch} />
       </Stack.Navigator>
     </NavigationContainer>
   );
