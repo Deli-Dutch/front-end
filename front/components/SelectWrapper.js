@@ -4,7 +4,11 @@ import { View, Text, StyleSheet } from 'react-native';
 const SelectWrapper = ({ title, children }) => {
   return <View style={styles.layout}>
     <View style={styles.titleBox}><Text style={styles.title}>{title}</Text></View>
-    <View style={styles.contentBox}>{children}</View>
+    <View style={styles.container}>
+      <View style={styles.contentBox}>{children}</View>
+      {/* 공간 확보용 빈view */}
+      <View style={styles.block}></View>
+    </View>
   </View>
 };
 
@@ -19,6 +23,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  container: {
+    flex: 4,
+  },
   contentBox: {
     flex: 4,
     flexDirection: 'row',
@@ -28,5 +35,8 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 20,
     fontWeight: '900',
+  },
+  block: {
+    flex: 1,
   },
 })
