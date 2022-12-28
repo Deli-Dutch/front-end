@@ -1,9 +1,9 @@
 import React from 'react';
 import { Dimensions, View, TextInput, StyleSheet } from 'react-native';
 
-const Input = ({ placeholder, onChangeText, value }) => {
+const Input = (props) => {
   return <View style={styles.container}>
-    <TextInput style={styles.textInput} onChangeText={onChangeText} value={value} placeholder={placeholder} />
+    <TextInput style={styles.textInput} {...props} />
   </View>
 };
 
