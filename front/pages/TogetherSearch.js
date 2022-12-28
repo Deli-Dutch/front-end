@@ -1,5 +1,5 @@
 import exdata2 from '../exdata2';
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useCallback} from 'react';
 import styles from '../styles';
 import {
   ScrollView,
@@ -12,12 +12,18 @@ import {
   TextInput,
   TouchableOpacity,
   ImageBackground,
+  Linking
 } from 'react-native';
+
+import Modal from '../components/Modal';
 
 const TogetherSearch = () => {
   const [search, setSearch] = useState('');
   const [filteredDataSource, setFilteredDataSource] = useState([]);
   const [masterDataSource, setMasterDataSource] = useState([]);
+
+  const [modal, setModal] = useState(false);
+  const [sayYes, setSayYes] = useState(false);
 
   useEffect(() => {
     getMemberInfo();
@@ -52,7 +58,12 @@ const TogetherSearch = () => {
   const ItemView = (item, key) => {
     //const imgUrl = `https://www.assembly.go.kr/static/portal/img/openassm/${item.MONA_CD}.jpg`;
     return (
-      <TouchableOpacity key={key} style={styles.flatListItem}>
+      <TouchableOpacity key={key} style={styles.flatListItem}
+        onPress={() => setModal(true)}>
+        {modal&&<Modal showButton={true} modalVisible={modal} setModalVisible={setModal} onComplete={()=>sayYes?setModal(!modal):setSayYes(true)}>
+          {!sayYes && <Text style={{ paddingVertical: 50, fontSize: 20, fontWeight: '900' }}>참여하시겠습니까?</Text>}
+          {sayYes && <View style={{ alignItems: 'center' }}><Text>아래의 채팅방에 참여하세요.</Text><Text style={{ color: 'darkblue' }} onPress={() => { Linking.openURL('http://www.naver.com'); setModal(false)}}>http://www.naver.com</Text></View>}
+        </Modal>}
         <View
           style={{
             flex: 5,

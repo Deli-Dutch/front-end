@@ -1,7 +1,7 @@
 import React from "react";
 import {  Modal as OriginModal, StyleSheet, Text, Pressable, View } from "react-native";
 
-const Modal = ({ title='', showButton=true, modalVisible, setModalVisible, children}) => {
+const Modal = ({ title='', showButton=true, onComplete, modalVisible, setModalVisible, children}) => {
   return (
     <View style={styles.centeredView}>
       <OriginModal
@@ -29,7 +29,7 @@ const Modal = ({ title='', showButton=true, modalVisible, setModalVisible, child
               </Pressable>
               <Pressable
                 style={styles.button}
-                onPress={() => setModalVisible(!modalVisible)}>
+                onPress={onComplete}>
                 <Text style={styles.textStyle}>확인</Text>
               </Pressable>
             </View>}
