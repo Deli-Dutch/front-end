@@ -18,6 +18,7 @@ import {
   Linking,
 } from 'react-native';
 const MenuList = ({ navigation }) => {
+  const [select, setSelect] = useState({id: 0, name: ''});
   const [modal, setModal] = useState(false);
   const [sayYes, setSayYes] = useState(false);
   const [filteredDataSource, setFilteredDataSource] = useState([]);
@@ -36,7 +37,7 @@ const MenuList = ({ navigation }) => {
   const ItemView = (item, key) => {
     //const imgUrl = `https://www.assembly.go.kr/static/portal/img/openassm/${item.MONA_CD}.jpg`;
     return (
-      <TouchableOpacity key={key} onPress={() => setModal(true)}>
+      <TouchableOpacity key={key} onPress={() => { setSelect({ id: item.id, name: item.name }); setModal(true); }}>
         <View
           style={[
             styles.flatListProfile,
@@ -57,13 +58,7 @@ const MenuList = ({ navigation }) => {
             </View>
           </View>
         </View>
-        <Modal title={sayYes?'':'장바구니에 담기'} modalVisible={modal} setModalVisible={setModal}
-          onComplete={() => { sayYes ? setModal(!modal): setSayYes(true); }}>
-          {!sayYes && <Text>{item.name}가(이){'\n'}메뉴에 추가됩니다.</Text>}
-          {sayYes && <><Text>아래의 채팅방에 참여하세요.</Text>
-            <Text style={{ color: 'darkblue' }} onPress={() => { Linking.openURL('http://google.com'); setModal(!modal); }}>
-            http://google.com</Text></>}
-        </Modal>
+        
         </TouchableOpacity>
     );
   };
@@ -74,7 +69,13 @@ const MenuList = ({ navigation }) => {
         backgroundColor: '#ffffff',
         height: '100%',
       }}>
-
+        <Modal title={sayYes?'':'장바구니에 담기'} modalVisible={modal} setModalVisible={setModal}
+          onComplete={() => { sayYes ? setModal(!modal): setSayYes(true); }}>
+          {!sayYes && <Text style={{lineHeight: 25, color: '#000'}}>{select.name}가(이){'\n'}메뉴에 추가됩니다.</Text>}
+          {sayYes && <><Text style={{lineHeight: 25, color: '#000'}}>아래의 채팅방에 참여하세요.</Text>
+            <Text style={{ color: 'darkblue' }} onPress={() => { Linking.openURL('http://google.com'); setModal(!modal); }}>
+            http://google.com</Text></>}
+        </Modal>
       <ScrollView style={{margin: 20}}>
         <View style={styles.assemblyListBar}>
           {filteredDataSource.map((e, i) => ItemView(e, i))}

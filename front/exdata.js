@@ -2,7 +2,7 @@ export default [
   {
     id: 0,
     //"created_by": 1,
-    //"food_id": 1,
+    food_id: 1,
     restaurant_id: 1,
     pick_up: '후문',
     openKakao: 'httpaaa',
@@ -13,7 +13,7 @@ export default [
   {
     id: 1,
     //"created_by": 1,
-    //"food_id": 1,
+    food_id: 1,
     restaurant_id: 2,
     pick_up: '후문',
     openKakao: 'httpaaa',
@@ -24,7 +24,7 @@ export default [
   {
     id: 2,
     //"created_by": 1,
-    //"food_id": 1,
+    food_id: 1,
     restaurant_id: 3,
     pick_up: '후문',
     openKakao: 'httpaaa',
@@ -35,7 +35,7 @@ export default [
   {
     id: 3,
     //"created_by": 1,
-    //"food_id": 1,
+    food_id: 1,
     restaurant_id: 4,
     pick_up: '후문',
     openKakao: 'httpaaa',
@@ -45,7 +45,7 @@ export default [
   {
     id: 4,
     //"created_by": 1,
-    //"food_id": 1,
+    food_id: 1,
     restaurant_id: 5,
     pick_up: '후문',
     openKakao: 'httpaaa',
@@ -56,7 +56,7 @@ export default [
   {
     id: 5,
     //"created_by": 1,
-    //"food_id": 1,
+    food_id: 1,
     restaurant_id: 6,
     pick_up: '후문',
     openKakao: 'httpaaa',
@@ -67,7 +67,7 @@ export default [
   {
     id: 6,
     //"created_by": 1,
-    //"food_id": 1,
+    food_id: 1,
     restaurant_id: 7,
     pick_up: '후문',
     openKakao: 'httpaaa',
@@ -78,7 +78,7 @@ export default [
   {
     id: 7,
     //"created_by": 1,
-    //"food_id": 1,
+    food_id: 1,
     restaurant_id: 8,
     pick_up: '후문',
     openKakao: 'httpaaa',
@@ -89,7 +89,7 @@ export default [
   {
     id: 8,
     //"created_by": 1,
-    //"food_id": 1,
+    food_id: 1,
     restaurant_id: 9,
     pick_up: '후문',
     openKakao: 'httpaaa',
@@ -100,7 +100,7 @@ export default [
   {
     id: 9,
     //"created_by": 1,
-    //"food_id": 1,
+    food_id: 1,
     restaurant_id: 10,
     pick_up: '후문',
     openKakao: 'httpaaa',
@@ -111,7 +111,7 @@ export default [
   {
     id: 10,
     //"created_by": 1,
-    //"food_id": 1,
+    food_id: 1,
     restaurant_id: 11,
     pick_up: '후문',
     openKakao: 'httpaaa',
